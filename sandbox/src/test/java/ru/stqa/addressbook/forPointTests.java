@@ -1,10 +1,7 @@
-package ru.stqa.pft;
+package ru.stqa.addressbook;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.awt.*;
-import java.awt.geom.Point2D;
 
 /**
  * Created by Артем on 09.01.2017.

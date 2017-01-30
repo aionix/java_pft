@@ -1,4 +1,4 @@
-package ru.stqa.pft;
+package ru.stqa.addressbook;
 
 /**
  * Created by Артем on 09.01.2017.

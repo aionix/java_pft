@@ -1,4 +1,4 @@
-package ru.stqa.pft;
+package ru.stqa.addressbook;
 
 public class Tests {
 

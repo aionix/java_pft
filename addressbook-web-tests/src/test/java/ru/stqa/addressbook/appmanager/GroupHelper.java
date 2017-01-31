@@ -1,54 +1,26 @@
-package ru.stqa.addressbook;
+package ru.stqa.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import ru.stqa.addressbook.model.GroupData;
 
 import java.util.List;
-
-import static com.sun.corba.se.spi.activation.IIOP_CLEAR_TEXT.value;
 
 /**
  * Created by Sergey on 31.01.2017.
  */
-public class BaseClass {
-    WebDriver wd;
-    WebDriverWait wait;
+public class GroupHelper {
+    private WebDriver wd;
 
-    @BeforeClass
-    public void startUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-        wd = new ChromeDriver();
-        wait = new WebDriverWait(wd, 10);
-    }
-
-    @BeforeMethod
-    public void startBrowser() {
-        wd.get("http://localhost/addressbook/");
-    }
-    @AfterMethod
-    public void closeBrowser(){
-        wd.quit();
-    }
-
-    public void Login() {
-        wd.findElement(By.name("user")).sendKeys("admin");
-        wd.findElement(By.name("pass")).sendKeys("secret");
-        wd.findElement(By.xpath("//*[@value='Login']")).click();
-    }
-
-    public void returnToGroupsPage() {
-        wd.findElement(By.partialLinkText("group")).click();
+    public GroupHelper(WebDriver wd) {
+        this.wd = wd;
     }
 
     public void newGroup() {
         wd.findElement(By.xpath("*//input[1][@value='New group']")).click();
     }
+
     public void submitGroupCreation() {
         wd.findElement(By.cssSelector("input[name='submit']")).click();
     }
@@ -69,6 +41,8 @@ public class BaseClass {
         System.out.println(groups.get(0).getAttribute("value"));   //почему-то возвращает null а get text  все ок
     }
 
+    public void deleteOneGroup(){
+        wd.findElement(By.xpath(".//span[1]")).click();
+        wd.findElement(By.xpath("//input[5][@name='delete']")).click();
+    }
 }
-
-

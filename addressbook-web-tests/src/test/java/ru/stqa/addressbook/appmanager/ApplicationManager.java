@@ -24,11 +24,12 @@ public class ApplicationManager {
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
+
+        wd.get("http://localhost/addressbook/");
     }
 
     @BeforeMethod
     public void startBrowser() {
-        wd.get("http://localhost/addressbook/");
     }
 
     public void stop() {
@@ -41,5 +42,9 @@ public class ApplicationManager {
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public SessionHelper getSessionHelper() {
+        return sessionHelper;
     }
 }

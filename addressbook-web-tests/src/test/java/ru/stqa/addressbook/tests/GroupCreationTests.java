@@ -10,7 +10,7 @@ public class GroupCreationTests extends TestBase {
 
     @Test
     public void createGroup(){
-        app.Login();
+        app.getSessionHelper().Login();
         app.getNavigationHelper().goToGroupsPage();
         app.getGroupHelper().newGroup();
         app.getGroupHelper().fillGroupForm(new GroupData("group_name1", "header1", "footer1"));

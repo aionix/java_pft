@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  * Created by Артем on 09.01.2017.
  */
 public class forPointTests {
-
+WebDriver driver;
 
     @Test
     void checkCoordinates(){

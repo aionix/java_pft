@@ -1,22 +1,23 @@
 package ru.stqa.addressbook;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Created by Sergey on 30.01.2017.
+ * Created by Sergey on 31.01.2017.
  */
-public class GroupCreationTests {
-   // public Webdriver driver;
+public class GroupCreationTests extends BaseClass {
 
-    @BeforeMethod
-    public void starter(){
-        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
-
-    }
     @Test
-    public void someTest(){
-     //   driver.get();
+    public void createGroup(){
+        Login();
+        returnToGroupsPage();
+//        newGroup();
+//        fillGroupForm(new GroupData("gr name1", "header1", "footer1"));
+//        submitGroupCreation();
+//        returnToGroupsPage();
+        getListOfGroups();
+
+
 
     }
 }

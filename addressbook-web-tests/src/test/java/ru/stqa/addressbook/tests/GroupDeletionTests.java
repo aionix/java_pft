@@ -11,6 +11,6 @@ public class GroupDeletionTests extends TestBase {
     void delGroup(){
         app.getSessionHelper().Login();
         app.getNavigationHelper().goToGroupsPage();
-        app.getGroupHelper().deleteOneGroup();
+        app.getGroupHelper().deleteOneFirstGroup();
     }
 }

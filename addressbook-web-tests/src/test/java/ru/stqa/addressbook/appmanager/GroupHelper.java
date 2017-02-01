@@ -41,7 +41,7 @@ public class GroupHelper extends HelperBase {
         System.out.println(groups.get(0).getAttribute("value"));   //почему-то возвращает null а get text  все ок
     }
 
-    public void deleteOneGroup() {
+    public void deleteOneFirstGroup() {
         wd.findElement(By.xpath(".//span[1]")).click();
         wd.findElement(By.xpath("//input[5][@name='delete']")).click();
     }

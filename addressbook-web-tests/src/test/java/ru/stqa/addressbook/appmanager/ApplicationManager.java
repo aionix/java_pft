@@ -12,9 +12,9 @@ import org.testng.annotations.BeforeMethod;
 public class ApplicationManager {
     WebDriver wd;
     WebDriverWait wait;
-    private  GroupHelper groupHelper;
-    private  NavigationHelper navigationHelper;
-    private  SessionHelper  sessionHelper;
+    private GroupHelper groupHelper;
+    private NavigationHelper navigationHelper;
+    private SessionHelper sessionHelper;
 
 
     public void init() {
@@ -32,10 +32,11 @@ public class ApplicationManager {
     public void startBrowser() {
     }
 
-    public void stop() {
+    public void closeBrowser() {
         wd.quit();
     }
 
+    //  Getters for helpers
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
